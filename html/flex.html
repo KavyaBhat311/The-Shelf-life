@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head><title>My Cozy Library — Room Designer</title></head>
+    <body>
+        <div class="app">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="mark">❧</div>
+                    <div>
+                        <h1>My Cozy Library</h1>
+                        <p>Build your dream library</p>
+                    </div>
+                </div>
+                <div class="side" id="sidebar"></div>
+            </aside>
+            <header class="topbar">
+                <div class="history"><button id="undo">↶</button><button id="redo">↷</button></div>
+                <div class="actions">
+                    <button id="save" class="primary">▣ <span>Save Library</span></button
+                    ><button id="load">▱ <span>Load Library</span></button
+                    ><button id="clear">♜ <span>Clear Room</span></button>
+                </div>
+            </header>
+            <main class="stage" id="stage">
+                <div class="room" id="room"></div>
+                <div class="scene" id="scene"></div>
+                <div class="hint">Drag items • scroll to rotate • click an item to select • delete selected items</div>
+            </main>
+            <section class="bottom">
+                <div class="tabs" id="tabs"></div>
+                <div class="tray" id="tray"></div>
+            </section>
+        </div>
+        <div class="toast" id="toast"></div>
+    </body>
+</html>

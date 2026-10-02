@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: rgb(188, 187, 186);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-width: 0;
+  min-height: 0;
+}
+
+button {
+  font: inherit;
+  color: rgb(188, 187, 186);
+  border: 0;
+  cursor: pointer;
+}
+
+.app {
+  --gap: clamp(8px, 1.15vw, 16px);
+  --side-width: clamp(150px, 14.35vw, 197px);
+  --right-width: clamp(150px, 14.0vw, 192px);
+  --bg: rgb(47, 41, 41);
+
+  width: 100vw;
+  height: 100dvh;
+  padding: clamp(6px, 0.7vw, 10px);
+  display: grid;
+  grid-template-columns: var(--side-width) minmax(0, 1fr) var(--right-width);
+  gap: var(--gap);
+  background: #503c3c;
+}
+
+/* Shared black buttons */
+.panel-button,
+.shelf-picker,
+.display,
+.options-scroll {
+  background: var(--bg);
+}
+
+.left-panel,
+.right-panel {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* gap: var(--gap); */
+}
+
+.panel-button {
+  width: 100%;
+  min-height: 47px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  font-size: clamp(12px, 1.25vw, 20px);
+  font-weight: 200;
+}
+
+.logo-button {
+  height: clamp(64px, 9.4vh, 95px);
+}
+
+.left-panel > .panel-button:not(.logo-button) {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+/* The left and right columns end exactly where the center workspace ends. */
+.left-panel,
+.right-panel {
+  align-self: stretch;
+}
+
+/* Shelf chooser */
+.shelf-picker {
+  height: clamp(190px, 20.5vh, 207px);
+  padding: 12px 14px;
+  flex: 0 0 auto;
+}
+
+.section-title {
+  color: rgb(188, 187, 186);
+  font-size: clamp(14px, 1.25vw, 20px);
+  line-height: 1;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.shelf-grid {
+  height: calc(100% - 24px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: clamp(14px, 1.65vw, 25px) clamp(10px, 2.2vw, 1px);
+  align-items: stretch;
+  justify-items: center;
+}
+
+.shelf-option {
+  width: min(38px, 100%);
+  min-width: 22px;
+  background: #2982a5;
+  border: 2px solid #2982a5;
+}
+
+/* Main workspace */
+.workspace {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  /* grid-template-rows: minmax(0, 1fr) clamp(38px, 5.0vh, 48px); */
+  grid-template-rows: minmax(0, 1fr) clamp(80px, 12vh, 10px);
+  gap: 6px;
+}
+
+.display {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(188, 187, 186);
+  font-size: clamp(14px, 1.25vw, 20px);
+}
+
+.options-scroll {
+  border-top: 1px solid #776a6a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(188, 187, 186);
+  font-size: clamp(14px, 1.25vw, 20px);
+}
+
+/* Right panel: compact controls, matching the left-side button scale.
+   The three columns themselves always share the same full screen height. */
+.right-panel {
+  justify-content: flex-start;
+}
+
+.right-panel .panel-button {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+/* Small screens: keep the entire interface visible without page scrolling.
+   The layout remains three columns and the controls scale down. */
+@media (max-width: 700px) {
+  .app {
+    --gap: 5px;
+    --side-width: 112px;
+    --right-width: 112px;
+    padding: 5px;
+  }
+
+  .panel-button {
+    padding: 5px 3px;
+    font-size: 11px;
+  }
+
+  .right-panel {
+    gap: 5px;
+  }
+
+  .logo-button {
+    height: 55px;
+  }
+
+  .shelf-picker {
+    height: 150px;
+    padding: 9px 7px;
+  }
+
+  .section-title {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .shelf-grid {
+    gap: 10px 10px;
+  }
+
+  .shelf-option {
+    width: 22px;
+  }
+
+  .display,
+  .options-scroll {
+    font-size: 11px;
+  }
+
+  .workspace {
+    grid-template-rows: minmax(0, 1fr) 32px;
+  }
+}
+
+@media (max-width: 430px) {
+  .app {
+    --side-width: 88px;
+    --right-width: 88px;
+    --gap: 4px;
+    padding: 4px;
+  }
+
+  .panel-button {
+    font-size: 9px;
+  }
+
+  .right-panel {
+    gap: 10px;
+  }
+
+  .logo-button {
+    height: 48px;
+  }
+
+  .shelf-picker {
+    height: 125px;
+    padding: 7px 5px;
+  }
+
+  .section-title {
+    font-size: 9px;
+  }
+
+  .shelf-grid {
+    gap: 7px;
+  }
+
+  .shelf-option {
+    width: 20px;
+    border-width: 1px;
+  }
+
+  .display,
+  .options-scroll {
+    font-size: 9px;
+  }
+
+  .workspace {
+    grid-template-rows: minmax(0, 1fr) 28px;
+  }
+}

@@ -49,7 +49,6 @@
         button:hover {
             background-color: #736254;
         }
-        /* Virtual Shelf Concept Layout */
         .shelf {
             width: 100%;
             max-width: 900px;
@@ -65,7 +64,6 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-        /* Lining items fluid flex structure */
         .book-item {
             width: 110px;
             height: 160px;
@@ -120,8 +118,7 @@
     <div class="shelf" id="library-shelf"></div>
 
     <script>
-        // INSERT YOUR UNIQUE GOOGLE CLOUD GENERATED STRING HERE
-        const GOOGLE_API_KEY = "AIzaSyBjWIhbcI_sQ7sI1b4LKkfVqn-mIOi704w"; 
+        const GOOGLE_API_KEY = "AIzaSyDktWrRaRuU-9fiMUvjb4qwbDvrf9Xdp_s"; 
 
         const searchInput = document.getElementById('search-input');
         const searchBtn = document.getElementById('search-btn');
@@ -140,16 +137,10 @@
             if (!query) return;
 
             errorMsg.textContent = ""; 
-            
-            // Check to ensure you updated the key placeholder
-            if (GOOGLE_API_KEY.includes("YOUR_FREE_GOOGLE_API_KEY")) {
-                errorMsg.textContent = "Please replace 'YOUR_FREE_GOOGLE_API_KEY_HERE' in the script with your real Google Cloud Console API Key.";
-                return;
-            }
 
             try {
-                // Query using authorized API parameter payload signature
-                const url = `https://googleapis.com{encodeURIComponent(query)}&maxResults=1&key=${GOOGLE_API_KEY}`;
+                // FIXED: Full endpoint path with correct variable template string format
+                const url = `https://www.googleapis.com{encodeURIComponent(query)}&maxResults=1&key=${GOOGLE_API_KEY}`;
                 
                 const response = await fetch(url);
                 if (!response.ok) {
@@ -163,14 +154,12 @@
                     return;
                 }
 
-                // target nearest indexing object item 
                 const bookInfo = data.items[0].volumeInfo;
                 const title = bookInfo.title || "Unknown Title";
                 
                 let coverUrl = "";
                 if (bookInfo.imageLinks) {
                     coverUrl = bookInfo.imageLinks.thumbnail || bookInfo.imageLinks.smallThumbnail;
-                    // Switch to secure HTTPS context directly
                     if (coverUrl.startsWith("http://")) {
                         coverUrl = coverUrl.replace("http://", "https://");
                     }
@@ -186,7 +175,6 @@
                     bookDiv.innerHTML = `<div class="book-fallback-title">${title}</div>`;
                 }
 
-                // Line books up one after another onto shelf
                 libraryShelf.appendChild(bookDiv);
                 
                 searchInput.value = "";

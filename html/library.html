@@ -3,98 +3,81 @@
     <head>
         <title>Library</title>
         <link rel="stylesheet" href="../styles/library.css"> 
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Allison&display=swap" rel="stylesheet">
     </head>
     <body>
-        <!-- <div class="bookishcorner">
-        <button class = "Bookish-corner"> 📚&#183 Ⓜⓨ &#183 🆂🅷🅴🅻🅵 &#183 Ⓛⓘⓕⓔ &#183&nbsp;&nbsp;🪟<br>
-        <span class="design-kb">Designed by Kavya Bhat</span>
-        </button><br> <br>
-        </div> -->
-        <div class="the-layout">
+        <div class="layout">
             <div>
                 <button class = "Bookish-corner"> 📚&#183 Ⓜⓨ &#183 🆂🅷🅴🅻🅵 &#183 Ⓛⓘⓕⓔ &#183&nbsp;&nbsp;🪟<br>
-                    <span class="design-kb">Designed by Kavya Bhat</span>
+                <span class="design-kb">Designed by Kavya Bhat</span>
                 </button>
-            </div>
+            </div>            
             <div>
-                <img class="library-png" src="../images/library.webp" alt="Library Image">
-                <input class="search-bar" type="text" placeholder="Search for your book 🔍 📖">
-                <button class="to-do"> To Do &#10003 </button>
-                <input type="checkbox" id="td1" name="task1" value="1">
-                <label for="td1" style="color: white;"> Start with .html</label><br>
-                <input type="checkbox" id="td2" name="task2" value="2">
-                <label for="td2" style="color: white;"> Decide landing page colors</label><br>
+                <div class="horizontal-layout1">
+                    <img class="thumbnail" src="../images/library.webp" alt="Library Image">
+                </div>
+                <div class="horizontal-layout2">
+                    <input class="search-bar" type="text" placeholder="Search for your book 🔍 📖"> <br> 
+                    <button class="to-do"> To Do &#10003 
+                    </button>
+                    <!-- #region To do list -->
+                    <input type="checkbox" id="td1" name="task1" value="1">
+                    <label for="td1" style="color: white;"> Start with .html</label><br>
+                    <input type="checkbox" id="td2" name="task2" value="2">
+                    <label for="td2" style="color: white;"> Decide page colors</label><br>
+                    <input type="checkbox" id="td3" name="task3" value="3">
+                    <label for="td3" style="color: white;"> Decide buttons</label><br>
+                    <input type="checkbox" id="td4" name="task4" value="4">
+                    <label for="td4" style="color: white;"> Create a sample layout</label><br>
+                    <input type="checkbox" id="td5" name="task5" value="5">
+                    <label for="td5" style="color: white;"> Add bookshelves</label><br>
+                    <input type="checkbox" id="td6" name="task6" value="6">
+                    <label for="td6" style="color: white;"> How to add books?</label><br>
+                    <input type="checkbox" id="td7" name="task7" value="7">
+                    <label for="td7" style="color: white;"> Make books 3D </label><br>
+                    <input type="checkbox" id="td8" name="task8" value="8">
+                    <label for="td8" style="color: white;"> Import/API book covers</label><br>
+                    <input type="checkbox" id="td9” name="task9” value="9"> 
+                    <label for="td9" style="color: white;"> 8 bookshelf choices </label><br>
+                    <input type="checkbox" id="td10” name="task10” value="10"> 
+                    <label for="td10" style="color: white;"> Bookshelf size selector</label><br>
+                    <input type="checkbox" id="td11” name="task11” value="11"> 
+                    <label for="td11" style="color: white;"> Bookshelf color selector</label><br>
+                    <input type="checkbox" id="td12” name="task12” value="12"> 
+                    <label for="td12" style="color: white;"> 3 to 8 shelf configurations</label><br>
+                    <input type="checkbox" id="td13” name="task13” value="13"> 
+                    <label for="td13" style="color: white;"> Furniture selection</label><br>
+                    <input type="checkbox" id="td14” name="task14” value="14"> 
+                    <label for="td14" style="color: white;"> Fairy lights</label><br>
+                    <input type="checkbox" id="td15” name="task15” value="15"> 
+                    <label for="td15" style="color: white;"> Wall clock</label><br>
+                    <input type="checkbox" id="td16” name="task16” value="16"> 
+                    <label for="td16" style="color: white;"> Plants</label><br>
+                    <input type="checkbox" id="td17” name="task17” value="17"> 
+                    <label for="td17" style="color: white;"> Desk</label><br>
+                    <input type="checkbox" id="td18" name="task18" value="18"> 
+                    <label for="td18" style="color: white;">  Armchair, Sofa, Ottoman</label><br>
+                    <input type="checkbox" id="td19” name="task19” value="19"> 
+                    <label for="td19" style="color: white;"> Coffee table</label><br>
+                    <input type="checkbox" id="td20” name="task20” value="20"> 
+                    <label for="td20" style="color: white;"> Floor/table lamps</label><br>
+                    <input type="checkbox" id="td21” name="task21” value="21"> 
+                    <label for="td21" style="color: white;"> Different light mood</label><br>
+                    <input type="checkbox" id="td22” name="task22” value="22"> 
+                    <label for="td22" style="color: white;"> Save & load library</label><br>
+                    <input type="checkbox" id="td23” name="task23” value="23"> 
+                    <label for="td23" style="color: white;">  Clear room</label><br>
+                    <input type="checkbox" id="td24” name="task24” value="24"> 
+                    <label for="td24" style="color: white;"> Responsive layout</label><br>
+                    <input type="checkbox" id="td25” name="task25” value="25"> 
+                    <label for="td25" style="color: white;"> Add pets </label><br>
+                    <input type="checkbox" id="td24” name="task24” value="24"> 
+                    <label for="td24" style="color: white;"> Book otpions new and old?</label><br>
+                    <!-- #endregion -->
+                </div>
             </div>
         </div>
-
-        <!-- <div class="library-layout">
-            <img class="library-png" src="../images/library.webp" alt="Library Image">
-        </div>
-        <div class="right-column">
-            <input class="search-bar" type="text" placeholder="Search for your book 🔍 📖">
-            <button class="to-do"> To Do &#10003 </button>
-            <div class="list-todo"> -->
-                <!-- #region To do list -->
-                <!-- <input type="checkbox" id="td1" name="task1" value="1">
-                <label for="td1" style="color: white;"> Start with .html</label><br>
-                <input type="checkbox" id="td2" name="task2" value="2">
-                <label for="td2" style="color: white;"> Decide landing page colors</label><br>
-                <input type="checkbox" id="td3" name="task3" value="3">
-                <label for="td3" style="color: white;"> Decide buttons</label><br>
-                <input type="checkbox" id="td4" name="task4" value="4">
-                <label for="td4" style="color: white;"> Create a sample layout</label><br>
-                <input type="checkbox" id="td5" name="task5" value="5">
-                <label for="td5" style="color: white;"> Add bookshelves</label><br>
-                <input type="checkbox" id="td6" name="task6" value="6">
-                <label for="td6" style="color: white;"> Figureout how to add books</label><br>
-                <input type="checkbox" id="td7" name="task7" value="7">
-                <label for="td7" style="color: white;"> Make books 3D </label><br>
-                <input type="checkbox" id="td8" name="task8" value="8">
-                <label for="td8" style="color: white;"> Import/API - Original book covers</label><br>
-                <input type="checkbox" id="td9” name="task9” value="9"> 
-                <label for="td9" style="color: white;"> 8 bookshelf choices </label><br>
-                <input type="checkbox" id="td10” name="task10” value="10"> 
-                <label for="td10" style="color: white;"> Bookshelf size selector</label><br>
-                <input type="checkbox" id="td11” name="task11” value="11"> 
-                <label for="td11" style="color: white;"> Bookshelf color selector</label><br>
-                <input type="checkbox" id="td12” name="task12” value="12"> 
-                <label for="td12" style="color: white;"> 3 to 8 shelf configurations</label><br>
-                <input type="checkbox" id="td13” name="task13” value="13"> 
-                <label for="td13" style="color: white;"> Furniture selection</label><br>
-                <input type="checkbox" id="td14” name="task14” value="14"> 
-                <label for="td14" style="color: white;"> Fairy lights</label><br>
-                <input type="checkbox" id="td15” name="task15” value="15"> 
-                <label for="td15" style="color: white;"> Wall clock</label><br>
-                <input type="checkbox" id="td16” name="task16” value="16"> 
-                <label for="td16" style="color: white;"> Plants</label><br>
-                <input type="checkbox" id="td17” name="task17” value="17"> 
-                <label for="td17" style="color: white;"> Desk</label><br>
-                <input type="checkbox" id="td18" name="task18" value="18"> 
-                <label for="td18" style="color: white;">  Armchair, Sofa, Ottoman</label><br>
-                <input type="checkbox" id="td19” name="task19” value="19"> 
-                <label for="td19" style="color: white;"> Coffee table</label><br>
-                <input type="checkbox" id="td20” name="task20” value="20"> 
-                <label for="td20" style="color: white;"> Floor/table lamps</label><br>
-                <input type="checkbox" id="td21” name="task21” value="21"> 
-                <label for="td21" style="color: white;"> Warm / daylight / evening room mood</label><br>
-                <input type="checkbox" id="td22” name="task22” value="22"> 
-                <label for="td22" style="color: white;"> Save & load library</label><br>
-                <input type="checkbox" id="td23” name="task23” value="23"> 
-                <label for="td23" style="color: white;">  Clear room</label><br>
-                <input type="checkbox" id="td24” name="task24” value="24"> 
-                <label for="td24" style="color: white;"> Responsive layout</label><br>
-                <input type="checkbox" id="td25” name="task25” value="25"> 
-                <label for="td25" style="color: white;"> Add pets </label><br>
-                <input type="checkbox" id="td24” name="task24” value="24"> 
-                <label for="td24" style="color: white;"> Make book otpions new and old?</label><br> -->
-                <!-- #endregion -->
-            <!-- </div>
-            </div> -->
-
     </body> 
 </html>
-
